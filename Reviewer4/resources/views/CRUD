@@ -1,0 +1,172 @@
+.emd DB_DATABSE=laravel2026
+
+
+papalitan lang daw
+
+
+pwede gumawa db sa myphpadmin tas ilagay lang name sa DB_DATABSE
+
+pwedeng DB facade or ORM
+
+pwede din i combine
+
+mas okay gamitin DB facade, mas mabilis ng milisecond
+
+PDO - finifilter and data na pumapasok
+
+The Query Builder, equivalent nya RAW SQL
+
+
+INSERT
+
+we need to create the route, advisable is route, contoller, view
+
+get kapag wala ang prinoproces
+post kapag sinubmit na yung form
+
+you can use whatever function name
+
+POST kasi kailangan ma serialize yung form fields
+namespace para ma inherent at pwede i extend
+
+need to indlude DB Facade
+
+now() function is for the date
+
+
+@method(DELETE) if need magdelete 
+
+
+public function up(){
+    Schema::
+}
+
+
+laravel pag nag create ng timestamps, dalawang field and e create nya, isa for created, isa for updated , created once lang, yung updated everytime my gagalawin sa data
+
+
+$request pag kukpunin yung value sa form
+
+
+
+setTimeout, magdidisplay lang for seconds yung display, additional pampaganda
+
+@method('PUT) kapag update
+@csrf kapag mag insert
+
+
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/display', function(){
+//     return view('display');
+// });
+// Route::post('/display', [DisplayController::class, 'display']);
+
+
+// Route::get('/welcome/{id}/{name}/{address}', function($id, $name, $address){
+//     // return view('welcome', compact('id', 'name', 'address'));
+//     return redirect('display');
+// });
+
+// // Route::get('/welcome/{id}/{name}/{address}', function($id, $name, $address){
+// //     return "$name, $id, $address";
+// // });
+
+// // web.php
+
+Route::get('/dashboard', function () {
+    return view('dashboard'); // make sure dashboard.blade.php exists
+})->name('punta'); // this is the named route
+
+
+// // web.php
+
+// Route::get('/go-to-dashboard', function () {
+//     return redirect()->route('dashboard'); // redirects to the named route
+// });
+
+
+// Route::permanentRedirect('/old', '/new');
+
+// Route::view('/home', 'home');
+
+//  Route::view('/home', 'home', ['name' => 'Jasmine']);
+
+
+//  Route::view('/p1', 'p1');
+// Route::view('/p2', 'p2');
+
+
+// Route::post('/p1', function (Request $request) {
+//     $username = $request->username;
+//     $password = $request->password;
+//     $conPass = $request->conPass;
+
+//     return view('display',compact('username', 'password', 'conPass'));
+// });
+
+// // //with old
+// // Route::post('/p1', function (Request $request) {
+// //     $username = $request->username;
+// //     $password = $request->password;
+// //     $conPass  = $request->conPass;
+
+// //     // Redirect to display page with input in session
+// //     return redirect('/display')->with([
+// //         'username' => $username,
+// //         'password' => $password,
+// //         'conPass'  => $conPass,
+// //     ]);
+// // });
+
+
+
+
+//TEST
+
+
+
+
+// Route::get('/login', function(){
+// return view('login');
+
+// });
+
+// Route::post('/login', function(Request $request){
+// $username = $request->username;
+// $password = $request->password;
+// $conPass = $request->conPass;
+
+// return view('display', compact('username'))
+// });
+
+Route::get('/welcome', function(){
+    return view('welcome');
+});
+
+Route::get('/grade', function(){
+    return view('grade');
+});
+
+Route::get('/grade/{name}/{grade?}', function($name,$grade="No Grade"  ){
+    return view('grade', compact('name','grade'));
+});
+
+Route::get('/login', function(){
+    return view('login');
+});
+
+Route::post('/s1', [StudentController::class, 'form1']);
+
+
+
+// Show the Customer form
+Route::get('/customer-form', [OrderController3::class, 'customerForm']);
+
+// Handle form submission
+Route::post('/customer-form', [OrderController3::class, 'customerSubmit']);
+
+Route::view('/login', 'login');
+
